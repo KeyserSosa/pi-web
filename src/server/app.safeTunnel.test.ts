@@ -433,6 +433,7 @@ function fakeSessionDaemon(): SessionProxyDaemon {
         capabilities: [],
       }),
     })),
+    requestStream: () => Promise.reject(new Error("Streaming not configured for test")),
     connectWebSocket: () => {
       throw new Error("WebSocket not configured for test");
     },
